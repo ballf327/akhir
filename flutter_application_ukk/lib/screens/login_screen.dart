@@ -22,8 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     setState(() => loading = false);
 
-    final token =
-        res['token'] ??
+    final token = res['token'] ??
         res['access_token'] ??
         (res['data'] != null ? res['data']['access_token'] : null);
 
@@ -33,65 +32,76 @@ class _LoginScreenState extends State<LoginScreen> {
         MaterialPageRoute(builder: (_) => HomeScreen()),
       );
     } else {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text(res['message'] ?? "Login gagal")));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(res['message'] ?? "Login gagal")),
+      );
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.blue.shade400, Colors.blue.shade900],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-        ),
-        child: Center(
-          child: SingleChildScrollView(
-            child: Card(
-              elevation: 10,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(24),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          // Background image
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/bg_login.jpg"), // tambahkan gambar di assets
+                fit: BoxFit.cover,
               ),
-              margin: const EdgeInsets.symmetric(horizontal: 24),
-              child: Padding(
-                padding: const EdgeInsets.all(24),
+            ),
+          ),
+          // Overlay gelap transparan
+          Container(color: Colors.black.withOpacity(0.4)),
+
+          // Form login (glassmorphism style)
+          Center(
+            child: SingleChildScrollView(
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 24),
+                padding: EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.15),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(color: Colors.white30, width: 1),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 20,
+                      offset: Offset(0, 8),
+                    ),
+                  ],
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Icon(
-                      Icons.lock_outline,
-                      size: 80,
-                      color: Colors.blue.shade700,
-                    ),
+                    Icon(Icons.lock, size: 80, color: Colors.white),
                     SizedBox(height: 16),
                     Text(
-                      "Welcome Back!",
+                      "Login",
                       style: TextStyle(
-                        fontSize: 22,
+                        fontSize: 26,
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue.shade700,
+                        color: Colors.white,
                       ),
                     ),
-                    SizedBox(height: 8),
-                    Text(
-                      "Silakan login untuk melanjutkan",
-                      style: TextStyle(color: Colors.grey[600]),
-                    ),
-                    SizedBox(height: 24),
+                    SizedBox(height: 30),
 
                     // Email
                     TextField(
                       controller: emailController,
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         labelText: "Email",
-                        prefixIcon: Icon(Icons.email_outlined),
+                        labelStyle: TextStyle(color: Colors.white70),
+                        prefixIcon: Icon(Icons.email, color: Colors.white),
+                        filled: true,
+                        fillColor: Colors.white.withOpacity(0.1),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(16),
+                          borderSide: BorderSide.none,
                         ),
                       ),
                       keyboardType: TextInputType.emailAddress,
@@ -101,18 +111,23 @@ class _LoginScreenState extends State<LoginScreen> {
                     // Password
                     TextField(
                       controller: passwordController,
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         labelText: "Password",
-                        prefixIcon: Icon(Icons.lock_outline),
+                        labelStyle: TextStyle(color: Colors.white70),
+                        prefixIcon: Icon(Icons.lock, color: Colors.white),
+                        filled: true,
+                        fillColor: Colors.white.withOpacity(0.1),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(16),
+                          borderSide: BorderSide.none,
                         ),
                       ),
                       obscureText: true,
                     ),
                     SizedBox(height: 24),
 
-                    // Button Login
+                    // Tombol login
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
@@ -122,26 +137,24 @@ class _LoginScreenState extends State<LoginScreen> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(16),
                           ),
-                          backgroundColor: Colors.blue.shade700,
+                          backgroundColor: Colors.blueAccent,
                         ),
-                        child:
-                            loading
-                                ? CircularProgressIndicator(color: Colors.white)
-                                : Text("Login", style: TextStyle(fontSize: 16)),
+                        child: loading
+                            ? CircularProgressIndicator(color: Colors.white)
+                            : Text("Login", style: TextStyle(fontSize: 18)),
                       ),
                     ),
-                    SizedBox(height: 12),
+                    SizedBox(height: 16),
 
-                    // Register Link
+                    // Register link
                     TextButton(
-                      onPressed:
-                          () => Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (_) => RegisterScreen()),
-                          ),
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => RegisterScreen()),
+                      ),
                       child: Text(
                         "Belum punya akun? Register",
-                        style: TextStyle(color: Colors.blue.shade700),
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ],
@@ -149,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }
