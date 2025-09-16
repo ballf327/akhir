@@ -97,13 +97,6 @@ Backend berfungsi sebagai API server, sedangkan frontend Flutter menampilkan dat
 
 ---
 
-## 📌 Lisensi
-
-Projek ini dibuat untuk **pembelajaran** dan **ujian kompetensi**.
-❌ Dilarang keras memperjualbelikan tanpa izin.
-
----
-
 
 
 
