@@ -45,4 +45,69 @@ Aplikasi ini menggunakan **Flutter** sebagai frontend (mobile app) dan **Laravel
 **Ganti password**  
 ![Ganti password](https://github.com/ballf327/akhir/blob/574fafaacc337fd3d966c34adf7b9fdf352fa9c4/Screenshot%202025-09-16%20161458.png)
 
+Oke, saya bikinkan draft `README.md` yang sudah siap dipakai untuk project **Laravel (backend) + Flutter (frontend)**, lengkap dengan dokumentasi screenshot.
+Nanti tinggal ganti nama project dan sesuaikan screenshot-nya ya 👇
+
+````markdown
+# 🚀 Project UKK Laravel + Flutter
+
+Projek ini merupakan integrasi **Laravel (Backend)** dan **Flutter (Frontend)** untuk keperluan **Ujian Kompetensi Keahlian (UKK)**.  
+Backend berfungsi sebagai API server, sedangkan frontend Flutter menampilkan data ke pengguna.
+
+---
+
+## ⚙️ Cara Menjalankan
+
+### 🔹 Backend (Laravel)
+
+1. Clone repository ini
+2. Masuk ke folder `backend/`
+3. Jalankan perintah berikut:
+
+   ```bash
+   composer install
+   cp .env.example .env
+   php artisan key:generate
+   php artisan migrate --seed
+   php artisan serve
+````
+
+4. Laravel akan berjalan di:
+   👉 `http://127.0.0.1:8000`
+
+---
+
+### 🔹 Frontend (Flutter)
+
+1. Masuk ke folder `frontend/`
+2. Jalankan:
+
+   ```bash
+   flutter pub get
+   flutter run
+   ```
+
+   > Pastikan emulator atau HP sudah terkoneksi.
+
+---
+
+## 📝 Catatan
+
+* Project ini masih **tahap awal** dan akan dikembangkan lebih lanjut.
+* Backend dan frontend sudah saling terhubung menggunakan REST API.
+* Screenshot aplikasi disimpan di folder:
+  👉 `docs/screenshots/`
+
+---
+
+## 📌 Lisensi
+
+Projek ini dibuat untuk **pembelajaran** dan **ujian kompetensi**.
+❌ Dilarang keras memperjualbelikan tanpa izin.
+
+---
+
+
+
+
 
