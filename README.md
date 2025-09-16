@@ -39,5 +39,9 @@ Aplikasi ini menggunakan **Flutter** sebagai frontend (mobile app) dan **Laravel
 
 ![Tampilan Login](https://github.com/ballf327/akhir/blob/433c7900e3ef1fb27dfb44c1a9d96c1138967a7d/Screenshot%202025-09-16%20155149.png)
 
+**Register**
+![Tampilan Register](https://github.com/ballf327/akhir/blob/433c7900e3ef1fb27dfb44c1a9d96c1138967a7d/Screenshot%202025-09-16%20155149.png)
+
+
 ---
 
