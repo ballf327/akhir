@@ -38,7 +38,7 @@ Aplikasi ini menggunakan **Flutter** sebagai frontend (mobile app) dan **Laravel
 **Login Page**  
 _(Tambahkan screenshot di folder `screenshots/` lalu sisipkan link di bawah ini)_  
 
-![Tampilan Login](/screenshots/Screenshot%202025-09-16%20155149.png)
+![Tampilan Login]()
 
 ---
 
