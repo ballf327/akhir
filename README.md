@@ -45,9 +45,6 @@ Aplikasi ini menggunakan **Flutter** sebagai frontend (mobile app) dan **Laravel
 **Ganti password**  
 ![Ganti password](https://github.com/ballf327/akhir/blob/574fafaacc337fd3d966c34adf7b9fdf352fa9c4/Screenshot%202025-09-16%20161458.png)
 
-Oke, saya bikinkan draft `README.md` yang sudah siap dipakai untuk project **Laravel (backend) + Flutter (frontend)**, lengkap dengan dokumentasi screenshot.
-Nanti tinggal ganti nama project dan sesuaikan screenshot-nya ya 👇
-
 ````markdown
 # 🚀 Project UKK Laravel + Flutter
 
